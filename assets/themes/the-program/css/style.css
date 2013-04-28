@@ -369,7 +369,7 @@ No styleguide reference.
   margin-right: 14px;
 }
 .media .img img {
-  display: block;
+  
 }
 .media .media-right {
   float: right;
@@ -726,7 +726,7 @@ pre {
   background-color: #fff04a;
 }
 .unit-article img {
-  display: block;
+
   margin-left: auto;
   margin-left: auto;
 }

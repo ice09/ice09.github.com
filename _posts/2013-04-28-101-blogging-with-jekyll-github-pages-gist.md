@@ -14,7 +14,7 @@ The following instructions let you install [Jekyll] (http://jekyllrb.com/) on Wi
 
 # Setup
 
-* Install [Ruby](http://www.ruby-lang.org/de/downloads/) for Windows (eg Ruby 2.0.0 RubyInstaller \(64 Bit\))
+* Install [Ruby](http://www.ruby-lang.org/de/downloads/) for Windows (eg. Ruby 2.0.0 RubyInstaller \(64 Bit\))
 * Install Jekyll: in a command shell, execute `gem install jekyll`
 * Most probably, the following exception will appear. Otherwise you can skip to *Install Jekyll Bootstrap*
 
@@ -41,7 +41,7 @@ at 'http://github.com/oneclick/rubyinstaller/wiki/Development-Kit'
 
 <img src="/assets/2013-04-28-101-blogging-with-jekyll-github-pages-gist/img/blog1_createRepo.jpg" />
 
-* after the creation of the repository, memorize the GitHub Url, you will need this for modifying your blog, eg. with Jekyll Bootstrap (next step)
+* after the creation of the repository note down the GitHub URL, you will need this for modifying your blog, eg. with Jekyll Bootstrap (next step)
 
 <img src="/assets/2013-04-28-101-blogging-with-jekyll-github-pages-gist/img/blog2_copyUrl.jpg" />
 

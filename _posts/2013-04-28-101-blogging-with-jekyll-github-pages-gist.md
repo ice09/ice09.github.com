@@ -89,4 +89,6 @@ after doing direct manual changes in your repo
 &lt;script src="https://gist.github.com/ice09/5497460.js"&gt; &lt;/script&gt;
 </pre>
 
+Results in nice, reusable, embedded code snippets like this
+
 <script src="https://gist.github.com/ice09/5497460.js"> </script>

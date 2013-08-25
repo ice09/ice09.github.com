@@ -61,5 +61,5 @@ MongoDB is not quite ARM-friendly. You will have to use a quite outdated version
 </pre>
 
 #### 9a. Start MongoDB on startup
-Add MongoDB to [startup scripts.] (http://unix.stackexchange.com/questions/45940/setting-up-boot-scripts-for-beaglebone-angstrom)
+Add MongoDB to [startup scripts.] (http://unix.stackexchange.com/questions/45940/setting-up-boot-scripts-for-beaglebone-angstrom)  
 *Whenever you have to change encoding, use UltraEdit or something similar on Windows, `dos2unix` did not work*

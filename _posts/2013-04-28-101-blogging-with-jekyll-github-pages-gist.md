@@ -91,4 +91,6 @@ after doing direct manual changes in your repo
 
 Results in nice, reusable, embedded code snippets like this
 
-<script src="https://gist.github.com/ice09/5497460.js"> </script>
+<script src="https://gist.github.com/ice09/5497460.js" type="text/javascript"> </script>
+
+<script src="https://gist.github.com/2603939.js?file=gist%2Bexample.m"> </script>

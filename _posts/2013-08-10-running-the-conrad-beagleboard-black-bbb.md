@@ -9,15 +9,19 @@ tags: (bbb, beagleboard)
 
 # Preparing the Beagleboard Beaglebone Black (BBB)
 
-This post has quick fixes for common problems I had with a Beagleboard Beaglebone Black (BBB) I bought in August 2013 at [Conrad] (http://www.conrad.de).
+This post has quick fixes for common problems I had with a Beagleboard Beaglebone Black (BBB) which I bought in August 2013 at [Conrad] (http://www.conrad.de).
 
 ### 1. Deactivate G Data InternetSecurity 2014
 If you are having problems getting the green "your are connected" image on the [local usb beagleboard page] (http://192.168.7.2), make sure you have deactivated the G Data InternetSecurity Web
 <img src="/assets/2013-08-10-running-the-conrad-beagleboard-black-bbb/img/webschutz.jpg" />
 
+This is how the image at the top of the page should look like
+
+<img src="/assets/2013-08-10-running-the-conrad-beagleboard-black-bbb/img/connected.jpg" />
+
 ### 2. Use "set date" in Beagleboard entry site
-The date is always set to some 2000 at startup. This causes several problems with SSH, TAR, etc.
-A quick fix is the use "set date" on the [local usb beagleboard page] (http://192.168.7.2)
+The date is always set to some 2000 at startup. This causes several problems with SSH, TAR, etc.  
+A quick fix is to use `set date` on the [local usb beagleboard page] (http://192.168.7.2)
 
 <img src="/assets/2013-08-10-running-the-conrad-beagleboard-black-bbb/img/setdate.jpg" />
 
@@ -38,10 +42,10 @@ Download the [ARM version] (http://www.oracle.com/technetwork/java/embedded/down
 
 ### 7. [Groovy Environment Manager (GVM)] (http://gvmtool.net/), [vert.x] (http://vertx.io/) and [Spring Boot] (https://github.com/SpringSource/spring-boot)
 After installing the [Groovy Environment Manager (GVM)] (http://gvmtool.net/), you can use this to install vert.x and Spring Boot.  
-For vert.x, there is a [detailed post] (http://touk.pl/blog/en/2013/02/23/vert-x-on-raspberry-pi/)
+For vert.x, there is a [detailed post.] (http://touk.pl/blog/en/2013/02/23/vert-x-on-raspberry-pi/)
 
 ### 8. [SCons] (http://www.scons.org/)
-For installing MongoDB you need a the build system [SCons] (http://www.scons.org/)
+For installing MongoDB you need a the build system [SCons] (http://www.scons.org/)  
 Follow the instructions [in the posts] (https://groups.google.com/forum/#!topic/beagleboard/UwtpcNdE7Kc)
 <pre>
 opkg update

@@ -27,7 +27,7 @@ It is better to invest some minutes and follow the [real tutorial for setting th
 In short: [do not use debug mode] (http://circuitco.com/support/index.php?title=BeagleBone_Black_FAQ)
 
 ### 4. Cannot connect to BBB with SSH
-Neither PuTTY nor GateOne SSH client can connect to BBB.
+Neither PuTTY nor GateOne SSH client can connect to BBB.  
 Look in the posts for the [Javascript for Cloud9 by Martin Schweizer] (https://groups.google.com/forum/#!msg/beagleboard/Ya2qE4repSY/73cyf1gOJB4J)
 
 ### 5. SD Card
@@ -37,7 +37,7 @@ Look in the posts for the [Post by William C Bonner] (https://groups.google.com/
 Download the [ARM version] (http://www.oracle.com/technetwork/java/embedded/downloads/javase/index.html) (ARMv7 Linux - Headless - Server Compiler EABI, VFP, SoftFP ABI, Little Endian)
 
 ### 7. [Groovy Environment Manager (GVM)] (http://gvmtool.net/), [vert.x] (http://vertx.io/) and [Spring Boot] (https://github.com/SpringSource/spring-boot)
-After installing the [Groovy Environment Manager (GVM)] (http://gvmtool.net/), you can use this to install vert.x and Spring Boot.
+After installing the [Groovy Environment Manager (GVM)] (http://gvmtool.net/), you can use this to install vert.x and Spring Boot.  
 For vert.x, there is a [detailed post] (http://touk.pl/blog/en/2013/02/23/vert-x-on-raspberry-pi/)
 
 ### 8. [SCons] (http://www.scons.org/)
@@ -61,5 +61,5 @@ MongoDB is not quite ARM-friendly. You will have to use a quite outdated version
 </pre>
 
 #### 9a. Start MongoDB on startup
-Tip from: http://unix.stackexchange.com/questions/45940/setting-up-boot-scripts-for-beaglebone-angstrom
+Add MongoDB to [startup scripts.] (http://unix.stackexchange.com/questions/45940/setting-up-boot-scripts-for-beaglebone-angstrom)
 *Whenever you have to change encoding, use UltraEdit or something similar on Windows, _dos2unix_ did not work*

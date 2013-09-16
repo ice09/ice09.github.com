@@ -67,6 +67,7 @@ MongoDB is not quite ARM-friendly. You will have to use a quite outdated version
 #### 9a. Start MongoDB on startup
 Add MongoDB to [startup scripts.] (http://unix.stackexchange.com/questions/45940/setting-up-boot-scripts-for-beaglebone-angstrom)
 Customize for MongoDB:
+
 <pre>
 [Unit]
 Description=MongoDB Server

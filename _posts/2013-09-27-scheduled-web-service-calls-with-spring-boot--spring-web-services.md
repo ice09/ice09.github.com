@@ -62,14 +62,14 @@ Our directory structure (done with "tree" in Cygwin)
 +-- application.properties        (copy file to target directory manually)
 +-- input.xml                     (copy file to target directory manually)
 +-- target
-¦   +-- gs-scheduling-tasks-0.1.0.jar
+¦   +-- gs-scheduling-tasks-0.1.0.jar (start in this directory with java -jar ...)
 ¦   +-- application.properties
 ¦   +-- input.xml                 
 </pre>
 
 no surprises here. Even though it is surely possible with customizing Maven, I decided to manually copy the two configuration files to the target directory, so I can execute it with {{java -jar gs-scheduling-tasks-0.1.0.jar}} from the target directory immediately.
 
-# Configuration
+## Configuration
 
 The application configuration, which must be named `application.properties` and must be on the execution path (where `java -jar` is called), ie. outside the generated uber-jar. So, it can just de deployed together with the generated jar.
 

@@ -67,7 +67,7 @@ Our directory structure (done with "tree" in Cygwin)
 ¦   +-- input.xml                 
 </pre>
 
-no surprises here. Even though it is surely possible with customizing Maven, I decided to manually copy the two configuration files to the target directory, so I can start with {{java -jar gs-scheduling-tasks-0.1.0.jar}} from the target directory immediately.
+no surprises here. Even though it is surely possible with customizing Maven, I decided to manually copy the two configuration files to the target directory, so I can execute it with {{java -jar gs-scheduling-tasks-0.1.0.jar}} from the target directory immediately.
 
 # Configuration
 
@@ -89,9 +89,10 @@ We are using an Application main class, which mostly just configures Spring's co
 @ComponentScan
 public class Application {
 
-	public static void main(String[] args) throws Exception {
-		SpringApplication.run(Application.class);
-	}
+  public static void main(String[] args) throws Exception {
+    SpringApplication.run(Application.class);
+  }
+  
 }
 </pre>
 
@@ -103,28 +104,32 @@ All other configuration is also taken from the external `application.properties`
 @EnableScheduling
 public class ScheduledTasks {
 
-	private static final SimpleDateFormat dateFormat 
-												= new SimpleDateFormat("dd.MM.yyyy HH:mm:ss");
+  private static final SimpleDateFormat dateFormat 
+                       = new SimpleDateFormat("dd.MM.yyyy HH:mm:ss");
 
-	@Value("${name}") private String configServers;
-	@Value("${file}") private String inputFile;
+  @Value("${name}") private String configServers;
+  @Value("${file}") private String inputFile;
 
-	private String[] servers;
+  private String[] servers;
 
-	@Scheduled(fixedDelayString = "${delay}")
-	public void callWebservice() {
-		if (servers == null) {
-			servers = configServers.split(",");
-		}
-		System.out.println("\n### [Web Services] on " + dateFormat.format(new Date()));
-		long time = System.currentTimeMillis();
-		for (String url : servers) {
-			System.out.print("==> " + url);
-			// read the sample input XML file configured as "file" in application.properties. Assume it is on the execution path (user.dir).
-			WebServiceClient.create(url, new File(System.getProperty("user.dir") + File.separatorChar + inputFile)).customSendAndReceive();
-			System.out.println(" ...ok [" + (System.currentTimeMillis() - time) + " ms]");
-		}
-	}
+  @Scheduled(fixedDelayString = "${delay}")
+  public void callWebservice() {
+    if (servers == null) {
+      servers = configServers.split(",");
+    }
+    System.out.println("\n### [Web Services] on " + dateFormat.format(new Date()));
+    long time = System.currentTimeMillis();
+    for (String url : servers) {
+      System.out.print("==> " + url);
+      // read the sample input XML file configured as "file" in application.properties. 
+      // Assume it is on the execution path (user.dir).
+      WebServiceClient.create(
+            url, 
+            new File(System.getProperty("user.dir") + File.separatorChar + inputFile)
+      ).customSendAndReceive();
+      System.out.println(" ...ok [" + (System.currentTimeMillis() - time) + " ms]");
+    }
+  }
 }
 </pre>
 
@@ -136,41 +141,41 @@ This represents a generic Web Service Client, since we can call a Web Service at
 <pre>
 public class WebServiceClient {
 
-	private WebServiceTemplate webServiceTemplate;
+  private WebServiceTemplate webServiceTemplate;
 
-	private File file;
-	private String url;
+  private File file;
+  private String url;
 
-	private WebServiceClient(String url, File file) {
-		this.url = url;
-		this.file = file;
-		this.webServiceTemplate = new WebServiceTemplate();
-	}
+  private WebServiceClient(String url, File file) {
+    this.url = url;
+    this.file = file;
+    this.webServiceTemplate = new WebServiceTemplate();
+  }
 
-	public static WebServiceClient create(String url, File file) {
-		return new WebServiceClient(url, file);
-	}
+  public static WebServiceClient create(String url, File file) {
+    return new WebServiceClient(url, file);
+  }
 
-	public void customSendAndReceive() {
-		try {
-			StreamSource source = new StreamSource(new FileReader(file));
-			StreamResult result = new StreamResult(new StringWriter());
-			org.springframework.ws.soap.saaj.SaajSoapMessageFactory sFactory = new org.springframework.ws.soap.saaj.SaajSoapMessageFactory();
-			sFactory.setSoapVersion(org.springframework.ws.soap.SoapVersion.SOAP_12);
-			sFactory.afterPropertiesSet();
-			webServiceTemplate.setMessageFactory(sFactory);
-			webServiceTemplate.afterPropertiesSet();
-			webServiceTemplate.sendSourceAndReceiveToResult(url, source, result);
-		} catch (FileNotFoundException e) {
-			e.printStackTrace();
-		}
-	}
+  public void customSendAndReceive() {
+    try {
+      StreamSource source = new StreamSource(new FileReader(file));
+      StreamResult result = new StreamResult(new StringWriter());
+      org.springframework.ws.soap.saaj.SaajSoapMessageFactory sFactory = new org.springframework.ws.soap.saaj.SaajSoapMessageFactory();
+      sFactory.setSoapVersion(org.springframework.ws.soap.SoapVersion.SOAP_12);
+      sFactory.afterPropertiesSet();
+      webServiceTemplate.setMessageFactory(sFactory);
+      webServiceTemplate.afterPropertiesSet();
+      webServiceTemplate.sendSourceAndReceiveToResult(url, source, result);
+    } catch (FileNotFoundException e) {
+      e.printStackTrace();
+    }
+  }
 }
 </pre>
 
 We are using this sample XML (must reside on the execution path where `java -jar` is called), it fits as client data for the [Spring Web Service server sample from springbyexample.org] (http://www.springbyexample.org/examples/setup.html#setup-project-setup-project-checkout)
 
     <bean:get-persons-request
-	    xmlns:bean="http://www.springbyexample.org/person/schema/beans">
-	    <name>?</name>
+      xmlns:bean="http://www.springbyexample.org/person/schema/beans">
+      <name>?</name>
     </bean:get-persons-request>

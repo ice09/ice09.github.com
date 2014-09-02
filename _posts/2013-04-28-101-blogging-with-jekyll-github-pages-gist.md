@@ -9,7 +9,7 @@ tags: (jekyll, ruby, blogging, gh-pages)
 
 # Finally: free, easy and fun blogging ... using Windows!
 
-[Jekyll](http://jekyllrb.com/) facilitates really easy blogging without any hosting capabilities, by using a free [GitHub](http://www.gihub.com) account in combination with [GitHub Pages] (http://pages.github.com/).<br/>
+[Jekyll](http://jekyllrb.com/) facilitates really easy blogging without any hosting capabilities, by using a free [GitHub](http://www.gihub.com) account in combination with [GitHub Pages](http://pages.github.com/).<br/>
 The following instructions let you install [Jekyll](http://jekyllrb.com/) on Windows.
 
 # Setup

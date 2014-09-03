@@ -9,7 +9,7 @@ tags: (Ripples. XRP, Node.js, ripple-lib)
 
 # Using Node.js, [Mailgun](http://www.mailgun.com) and [Ripple](http://www.ripple.com) for Ripple Payment Mail Notification
 
-We will write a [Node.js](http://nodejs.org) module which scan the Ripple Ledger for all transactions, look for a specified account and write a mail with [Mailgun(-js)](http://www.mailgun.com)
+We will write a [Node.js](http://nodejs.org) module which scans the Ripple Ledger for all transactions using [ripple-lib](https://github.com/ripple/ripple-lib/blob/develop/README.md#installation), looks for a specified account and writes a mail with [Mailgun(-js)](http://www.mailgun.com)
 
 # Prerequisites
 

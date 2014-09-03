@@ -42,17 +42,17 @@ Download the [ARM version] (http://www.oracle.com/technetwork/java/embedded/down
 
 ### 7. [Groovy Environment Manager (GVM)] (http://gvmtool.net/), [vert.x] (http://vertx.io/) and [Spring Boot] (https://github.com/SpringSource/spring-boot)
 After installing the [Groovy Environment Manager (GVM)] (http://gvmtool.net/), you can use this to install vert.x and Spring Boot.  
-For vert.x, there is a [detailed post.] (http://touk.pl/blog/en/2013/02/23/vert-x-on-raspberry-pi/)
+For vert.x, there is a [detailed post.](http://touk.pl/blog/en/2013/02/23/vert-x-on-raspberry-pi/)
 
 ### 8. [SCons] (http://www.scons.org/)
-For installing MongoDB you need a the build system [SCons] (http://www.scons.org/)  
+For installing MongoDB you need a the build system [SCons](http://www.scons.org/)  
 Follow the instructions [in the posts] (https://groups.google.com/forum/#!topic/beagleboard/UwtpcNdE7Kc)
-<pre>
+``
 opkg update
 opkg install python-distutils
 opkg install python-compile
 python setup.py install
-</pre>
+``
 
 ### 9. MongoDB 2.5.1
 MongoDB is not quite ARM-friendly. You will have to use a quite outdated version of MongoDB, but it works.
